@@ -1,0 +1,48 @@
+{
+  "name": "reachinbox-backend",
+  "version": "1.0.0",
+  "description": "ReachInbox Associate Backend Engineer Assignment - Real-Time IMAP Synchronization, Elasticsearch & AI Pipeline",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "rimraf dist && tsc",
+    "start": "node dist/index.js",
+    "test": "jest --runInBand",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "reachinbox",
+    "imap",
+    "elasticsearch",
+    "rag",
+    "ai",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.13.1",
+    "@google/genai": "^2.25.0",
+    "axios": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "imapflow": "^2.2.1",
+    "mailparser": "^3.9.33",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/mailparser": "^3.9.0",
+    "@types/node": "^20.12.7",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
+  }
+}

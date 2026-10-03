@@ -1,0 +1,354 @@
+{
+  "info": {
+    "_postman_id": "reachinbox-backend-assignment-collection",
+    "name": "ReachInbox Backend Assignment",
+    "description": "Postman API Collection for ReachInbox Associate Backend Engineer assignment - Email Search, Filtering, Pagination, Accounts, and Health checks.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000",
+      "type": "string"
+    },
+    {
+      "key": "sampleEmailId",
+      "value": "account_1#INBOX#0#101",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health & System",
+      "item": [
+        {
+          "name": "GET Health Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            },
+            "description": "Returns uptime, Elasticsearch cluster status, index health, and active IMAP account states."
+          }
+        },
+        {
+          "name": "GET SSE Real-Time Events Stream",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/event-stream"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "events"]
+            },
+            "description": "Server-Sent Events (SSE) live stream delivering email:new, email:categorized, and email:synced events without client-side polling."
+          }
+        }
+      ]
+    },
+    {
+      "name": "IMAP Accounts",
+      "item": [
+        {
+          "name": "GET All Accounts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/accounts",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "accounts"]
+            },
+            "description": "Lists all configured IMAP accounts with real-time persistent IDLE states and total indexed emails."
+          }
+        },
+        {
+          "name": "GET Account by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/accounts/account_1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "accounts", "account_1"]
+            },
+            "description": "Returns connection state and metadata for a single IMAP account."
+          }
+        },
+        {
+          "name": "POST Trigger Manual Sync",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"daysBack\": 30\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/accounts/account_1/sync",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "accounts", "account_1", "sync"]
+            },
+            "description": "Triggers on-demand historical synchronization for the specified account."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Emails (List & Filter)",
+      "item": [
+        {
+          "name": "GET All Emails (Default Pagination)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/emails?page=1&limit=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "emails"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" }
+              ]
+            },
+            "description": "Lists newest emails across all accounts with default pagination."
+          }
+        },
+        {
+          "name": "GET Emails - Filter by Account",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/emails?accountId=account_1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "emails"],
+              "query": [
+                { "key": "accountId", "value": "account_1" }
+              ]
+            },
+            "description": "Filters emails belonging exclusively to account_1."
+          }
+        },
+        {
+          "name": "GET Emails - Filter by Folder",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/emails?folder=INBOX",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "emails"],
+              "query": [
+                { "key": "folder", "value": "INBOX" }
+              ]
+            },
+            "description": "Filters emails residing in the specified folder (e.g. INBOX)."
+          }
+        },
+        {
+          "name": "GET Emails - Filter by Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/emails?category=Interested",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "emails"],
+              "query": [
+                { "key": "category", "value": "Interested" }
+              ]
+            },
+            "description": "Filters emails categorized as 'Interested' by AI triage."
+          }
+        },
+        {
+          "name": "GET Emails - Combined Filters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/emails?accountId=account_1&folder=INBOX&category=Interested&page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "emails"],
+              "query": [
+                { "key": "accountId", "value": "account_1" },
+                { "key": "folder", "value": "INBOX" },
+                { "key": "category", "value": "Interested" },
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "10" }
+              ]
+            },
+            "description": "Filters by account, folder, and category simultaneously with custom page size."
+          }
+        },
+        {
+          "name": "GET Email by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/emails/{{sampleEmailId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "emails", "{{sampleEmailId}}"]
+            },
+            "description": "Fetches the complete parsed email document with full headers, bodyText, and bodyHtml."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Elasticsearch Search",
+      "item": [
+        {
+          "name": "GET Full-Text Search",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=pricing",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "search"],
+              "query": [
+                { "key": "q", "value": "pricing" }
+              ]
+            },
+            "description": "Performs Elasticsearch full-text search across subject, body, sender, and recipients with search highlighting."
+          }
+        },
+        {
+          "name": "GET Search + Filter by Account",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=meeting&accountId=account_1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "search"],
+              "query": [
+                { "key": "q", "value": "meeting" },
+                { "key": "accountId", "value": "account_1" }
+              ]
+            },
+            "description": "Searches for 'meeting' restricted to account_1."
+          }
+        },
+        {
+          "name": "GET Search + Multi-Filter (Category + Folder)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=demo&folder=INBOX&category=Interested",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "search"],
+              "query": [
+                { "key": "q", "value": "demo" },
+                { "key": "folder", "value": "INBOX" },
+                { "key": "category", "value": "Interested" }
+              ]
+            },
+            "description": "Searches for 'demo' inside INBOX categorized as 'Interested'."
+          }
+        }
+      ]
+    },
+    {
+      "name": "AI Categorization & Webhooks",
+      "item": [
+        {
+          "name": "POST Manually Re-Categorize Email",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/emails/{{sampleEmailId}}/categorize",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "emails", "{{sampleEmailId}}", "categorize"]
+            },
+            "description": "Triggers on-demand AI categorization for an email and saves the updated category, confidence, and reasoning in Elasticsearch."
+          }
+        },
+        {
+          "name": "POST Test Slack & Webhook Delivery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject\": \"Enterprise Opportunity - ReachInbox Test\",\n  \"from\": \"prospective-buyer@acmecorp.com\",\n  \"snippet\": \"We are looking to purchase 250 enterprise licenses and would like a direct demo.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/test/webhook",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "test", "webhook"]
+            },
+            "description": "Simulates an Interested lead and dispatches both Slack Block Kit notification and Webhook.site payload."
+          }
+        }
+      ]
+    },
+    {
+      "name": "RAG & Vector Knowledge Base",
+      "item": [
+        {
+          "name": "POST Seed Knowledge Base (Vectors)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/knowledge/seed",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "knowledge", "seed"]
+            },
+            "description": "Loads the 8 knowledge documents, splits them into 22 chunks, generates 768-dim embeddings via Google Gemini (gemini-embedding-001), and idempotently indexes them into Elasticsearch reachinbox-knowledge."
+          }
+        },
+        {
+          "name": "GET Knowledge Base Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/knowledge/stats",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "knowledge", "stats"]
+            },
+            "description": "Returns current vector index document count, embedding model, and vector dimensionality."
+          }
+        },
+        {
+          "name": "POST Generate Suggested Reply (RAG)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/emails/{{sampleEmailId}}/suggest-reply",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "emails", "{{sampleEmailId}}", "suggest-reply"]
+            },
+            "description": "Retrieves the email, generates a semantic query embedding, performs Elasticsearch kNN vector search against reachinbox-knowledge, augments the prompt with retrieved chunks, and generates Concise and Detailed reply options with transparent source attribution."
+          }
+        }
+      ]
+    }
+  ]
+}
