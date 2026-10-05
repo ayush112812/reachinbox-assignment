@@ -1,0 +1,23 @@
+{
+  "id": "kb-common-questions",
+  "title": "Responding to Common Prospect Questions",
+  "category": "faq",
+  "source": "reachinbox-knowledge-base",
+  "chunks": [
+    {
+      "chunkIndex": 1,
+      "title": "Questions Regarding Pricing & Plans",
+      "content": "When prospects ask for pricing details: ReachInbox offers tiered plans scaled to the number of active mailboxes, team seats, and synchronization volume. Because custom packages exist for solo operators up to large outbound agencies, we do not quote fixed rigid figures in cold emails. Instead, explain that plans are flexible based on mailbox count and invite them to a quick intro call to review their specific setup and share exact pricing: {{BOOKING_URL}}."
+    },
+    {
+      "chunkIndex": 2,
+      "title": "Questions Regarding Product Demos",
+      "content": "When prospects request a demo or walkthrough: Express enthusiasm and confirm our readiness to showcase the platform live. Explain that the demo covers multi-account IMAP setup, Elasticsearch real-time search, automated categorization, and AI suggested replies. Provide the booking link to select a convenient 15-minute slot: {{BOOKING_URL}}."
+    },
+    {
+      "chunkIndex": 3,
+      "title": "Questions Regarding Email Provider Compatibility",
+      "content": "When prospects ask which email providers are supported: ReachInbox connects to any standard IMAP/SMTP provider, including Google Workspace / Gmail, Microsoft 365 / Outlook, Zoho Mail, Fastmail, and private custom mail servers supporting TLS and IMAP IDLE."
+    }
+  ]
+}

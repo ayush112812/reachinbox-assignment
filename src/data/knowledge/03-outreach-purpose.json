@@ -1,0 +1,18 @@
+{
+  "id": "kb-outreach-purpose",
+  "title": "Outreach Purpose & Value Proposition",
+  "category": "outreach",
+  "source": "reachinbox-knowledge-base",
+  "chunks": [
+    {
+      "chunkIndex": 1,
+      "title": "Why ReachInbox Initiates Outreach",
+      "content": "Our outreach introduces growth-focused sales leaders, B2B agencies, and outreach specialists to modern email unification and automated response intelligence. Many outbound teams suffer from lost leads when prospect responses arrive across disparate mailboxes and remain unanswered for hours. ReachInbox addresses this by unifying all inboxes and providing instant alert triage and AI reply assistance."
+    },
+    {
+      "chunkIndex": 2,
+      "title": "Consultative Discovery Goal",
+      "content": "The primary objective of initial conversations is consultative: to understand the prospect's email volume, inbox management challenges, response time bottlenecks, and explore if ReachInbox's real-time synchronization and categorization can increase their lead-to-meeting conversion rates."
+    }
+  ]
+}

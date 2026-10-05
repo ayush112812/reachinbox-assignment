@@ -1,0 +1,23 @@
+{
+  "id": "kb-common-objections",
+  "title": "Handling Common Prospect Objections",
+  "category": "objections",
+  "source": "reachinbox-knowledge-base",
+  "chunks": [
+    {
+      "chunkIndex": 1,
+      "title": "Objection: Already Using Another Email Tool",
+      "content": "When a prospect mentions they are already using an email client or outreach tool, warmly acknowledge their current stack. Emphasize that ReachInbox is not meant to force a rip-and-replace; it acts as an aggregation and intelligence layer that connects via standard IMAP. It provides real-time persistent IDLE sync, Elasticsearch millisecond search, and automated AI categorization across all inboxes that standard tools do not offer in one place. Offer to show a 10-minute side-by-side walkthrough."
+    },
+    {
+      "chunkIndex": 2,
+      "title": "Objection: Not Interested or Bad Timing",
+      "content": "If a prospect states they are not interested or that the timing is not right, reply politely and professionally without pressure. Thank them for their time, acknowledge their current priorities, and let them know they can always revisit or reach out in the future whenever multi-account email volume becomes a bottleneck. Do not send repeated unsolicited follow-ups to uninterested prospects."
+    },
+    {
+      "chunkIndex": 3,
+      "title": "Objection: Data Privacy & Security Concerns",
+      "content": "When prospects inquire about security, reassure them that ReachInbox uses standard TLS/SSL encrypted IMAP connections, maintains role-based isolation, indexes data in dedicated secure Elasticsearch clusters, and does not use private email communications to train public external foundation models. All operations adhere to standard enterprise privacy and least-privilege principles."
+    }
+  ]
+}

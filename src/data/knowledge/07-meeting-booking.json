@@ -1,0 +1,23 @@
+{
+  "id": "kb-meeting-booking",
+  "title": "Meeting Booking & Scheduling Instructions",
+  "category": "booking",
+  "source": "reachinbox-knowledge-base",
+  "chunks": [
+    {
+      "chunkIndex": 1,
+      "title": "Sharing the Booking Link",
+      "content": "Whenever a prospect shows interest in connecting, confirms availability, or asks for an introduction/demo, share the booking link: {{BOOKING_URL}}. Offer a concise, low-friction invitation, such as: 'Feel free to grab 15 minutes that works best for your schedule here: {{BOOKING_URL}}'."
+    },
+    {
+      "chunkIndex": 2,
+      "title": "Proposing Alternative Meeting Times",
+      "content": "In addition to sharing the calendar link {{BOOKING_URL}}, offer 1-2 specific time windows (e.g., 'Alternatively, I am available this Tuesday afternoon or Thursday morning if you prefer me to send an invite directly'). This accommodates prospects who prefer calendar links as well as those who prefer direct calendar invites."
+    },
+    {
+      "chunkIndex": 3,
+      "title": "Meeting Preparation & Agenda",
+      "content": "A standard introductory call runs for 15 to 20 minutes. The agenda covers: 1) Understanding current inbox management workflows and pain points. 2) A 5-minute live walkthrough of ReachInbox. 3) Aligning on team mailbox count, integration requirements, and next steps."
+    }
+  ]
+}

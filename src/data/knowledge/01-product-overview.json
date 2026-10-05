@@ -1,0 +1,18 @@
+{
+  "id": "kb-product-overview",
+  "title": "ReachInbox Product Overview & Architecture",
+  "category": "product",
+  "source": "reachinbox-knowledge-base",
+  "chunks": [
+    {
+      "chunkIndex": 1,
+      "title": "Platform Overview & Purpose",
+      "content": "ReachInbox is a centralized email synchronization, categorization, and outreach acceleration platform. It connects to multiple IMAP inboxes simultaneously in real time, indexes conversations into Elasticsearch, and leverages artificial intelligence to classify emails and suggest contextual replies. The platform is designed to eliminate fragmented inboxes and ensure that high-priority prospect replies are acted on immediately."
+    },
+    {
+      "chunkIndex": 2,
+      "title": "Real-Time Infrastructure vs Batch Polling",
+      "content": "Unlike conventional email tools that use periodic cron polling or delayed batch fetches, ReachInbox maintains persistent IMAP IDLE connections according to RFC 2177. When a prospect responds, the email is received within seconds, indexed into Elasticsearch, and passed through automated AI categorization without manual intervention."
+    }
+  ]
+}

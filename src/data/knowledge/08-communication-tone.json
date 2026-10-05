@@ -1,0 +1,23 @@
+{
+  "id": "kb-communication-tone",
+  "title": "Communication Tone & Style Guidelines",
+  "category": "guidelines",
+  "source": "reachinbox-knowledge-base",
+  "chunks": [
+    {
+      "chunkIndex": 1,
+      "title": "Professional, Consultative Tone",
+      "content": "All reply suggestions must maintain a respectful, professional, and consultative tone. Avoid pushy sales cliches, exaggerated superlatives, or synthetic urgency. Address the prospect directly by name when available, acknowledge their specific questions first, and provide helpful, concise answers."
+    },
+    {
+      "chunkIndex": 2,
+      "title": "Formatting & Length Standards",
+      "content": "Keep replies concise and easy to read on mobile devices. Use short paragraphs (2-3 sentences max) with clear spacing. Always conclude with a single, clear call to action (e.g., offering the booking link {{BOOKING_URL}} or asking a simple clarifying question)."
+    },
+    {
+      "chunkIndex": 3,
+      "title": "Honesty & Hallucination Avoidance",
+      "content": "If a prospect asks about a feature or policy not detailed in the knowledge base, never invent capabilities, guarantee uptime percentages, or fabricate customer stories. Explicitly acknowledge the question and offer to confirm the exact technical details during the intro call."
+    }
+  ]
+}

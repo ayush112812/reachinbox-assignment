@@ -1,0 +1,18 @@
+{
+  "id": "kb-target-customers",
+  "title": "Target Customers & Use Cases",
+  "category": "target_audience",
+  "source": "reachinbox-knowledge-base",
+  "chunks": [
+    {
+      "chunkIndex": 1,
+      "title": "Ideal Customer Profile",
+      "content": "ReachInbox is built for B2B Sales Development Representatives (SDRs), Account Executives (AEs), outbound growth teams, lead generation agencies managing multi-client domains, and recruitment firms. These teams operate across dozens or hundreds of email accounts simultaneously and require reliable, centralized message triage."
+    },
+    {
+      "chunkIndex": 2,
+      "title": "Core Operational Use Cases",
+      "content": "Key use cases include: 1) Centralizing incoming responses across all outbound domains into a single search-indexed feed. 2) Automatically filtering out Out of Office and Spam to prioritize genuine prospect interest. 3) Routing hot 'Interested' leads instantly to team Slack channels. 4) Assisting reps with AI suggested replies tailored to company playbooks."
+    }
+  ]
+}

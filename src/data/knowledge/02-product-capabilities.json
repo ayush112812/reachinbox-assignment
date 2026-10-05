@@ -1,0 +1,28 @@
+{
+  "id": "kb-product-capabilities",
+  "title": "ReachInbox Product Capabilities & Features",
+  "category": "capabilities",
+  "source": "reachinbox-knowledge-base",
+  "chunks": [
+    {
+      "chunkIndex": 1,
+      "title": "Multi-Account Persistent IMAP Synchronization",
+      "content": "ReachInbox supports concurrent multi-account IMAP synchronization with automatic reconnect backoff and keepalive heartbeats. It maintains an initial 30-day historical window sync and seamless transition to real-time IDLE event listening. All emails from distinct accounts are accessible in a unified interface."
+    },
+    {
+      "chunkIndex": 2,
+      "title": "Elasticsearch Search & Filtering Engine",
+      "content": "All email messages, metadata, snippets, and headers are indexed in Elasticsearch. The system provides sub-50ms full-text search with relevance boosting across subject, sender, and body, with hit highlighting (<mark> tags) and strict exact-match filtering by account, folder, and category."
+    },
+    {
+      "chunkIndex": 3,
+      "title": "AI Categorization & Instant Notifications",
+      "content": "Every email is categorized into one of five semantic categories: Interested, Meeting Booked, Not Interested, Spam, or Out of Office. Meeting Booked takes precedence over generic interest when a meeting time is explicitly confirmed. When a real-time Interested email is classified, automated notifications are dispatched to Slack (Block Kit) and external webhooks with persistent deduplication."
+    },
+    {
+      "chunkIndex": 4,
+      "title": "RAG-Powered Reply Suggestions",
+      "content": "ReachInbox incorporates Retrieval-Augmented Generation (RAG) by embedding company product knowledge and outreach playbooks into a vector index using dense vectors. When an email arrives, semantic vector search finds the most relevant knowledge chunks and generates contextual, professional reply drafts."
+    }
+  ]
+}
