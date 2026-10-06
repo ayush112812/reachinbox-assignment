@@ -1,7 +1,7 @@
 {
-  "name": "reachinbox-backend",
+  "name": "ai-email-onebox",
   "version": "1.0.0",
-  "description": "ReachInbox Associate Backend Engineer Assignment - Real-Time IMAP Synchronization, Elasticsearch & AI Pipeline",
+  "description": "Real-Time Multi-Account IMAP Synchronization, Elasticsearch Full-Text Search & Gemini Vector RAG Pipeline",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
